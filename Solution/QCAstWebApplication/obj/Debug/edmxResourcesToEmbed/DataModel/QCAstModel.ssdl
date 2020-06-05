@@ -1,0 +1,340 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QCAstBillingModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="QCAstBillingModelStoreContainer">
+    <EntitySet Name="Billing" EntityType="QCAstBillingModel.Store.Billing" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CDRSource" EntityType="QCAstBillingModel.Store.CDRSource" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Client" EntityType="QCAstBillingModel.Store.Client" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Cost" EntityType="QCAstBillingModel.Store.Cost" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CostLocal" EntityType="QCAstBillingModel.Store.CostLocal" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Invoice" EntityType="QCAstBillingModel.Store.Invoice" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PreferredContactMethod" EntityType="QCAstBillingModel.Store.PreferredContactMethod" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Profile" EntityType="QCAstBillingModel.Store.Profile" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sysdiagrams" EntityType="QCAstBillingModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="User" EntityType="QCAstBillingModel.Store.User" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Billing_CDRSource" Association="QCAstBillingModel.Store.FK_Billing_CDRSource">
+      <End Role="CDRSource" EntitySet="CDRSource" />
+      <End Role="Billing" EntitySet="Billing" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Billing_Client" Association="QCAstBillingModel.Store.FK_Billing_Client">
+      <End Role="Client" EntitySet="Client" />
+      <End Role="Billing" EntitySet="Billing" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Billing_Invoice" Association="QCAstBillingModel.Store.FK_Billing_Invoice">
+      <End Role="Invoice" EntitySet="Invoice" />
+      <End Role="Billing" EntitySet="Billing" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Billing_User" Association="QCAstBillingModel.Store.FK_Billing_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Billing" EntitySet="Billing" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Client_PreferredContactMethod" Association="QCAstBillingModel.Store.FK_Client_PreferredContactMethod">
+      <End Role="PreferredContactMethod" EntitySet="PreferredContactMethod" />
+      <End Role="Client" EntitySet="Client" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Invoice_User" Association="QCAstBillingModel.Store.FK_Invoice_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Invoice" EntitySet="Invoice" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Client" Association="QCAstBillingModel.Store.FK_User_Client">
+      <End Role="Client" EntitySet="Client" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_UserProfile" Association="QCAstBillingModel.Store.FK_User_UserProfile">
+      <End Role="Profile" EntitySet="Profile" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Billing">
+    <Key>
+      <PropertyRef Name="BillingID" />
+    </Key>
+    <Property Name="BillingID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CallType" Type="varchar" MaxLength="150" />
+    <Property Name="CallDate" Type="datetime" />
+    <Property Name="CLID" Type="varchar" MaxLength="50" />
+    <Property Name="Src" Type="varchar" MaxLength="50" />
+    <Property Name="Dst" Type="varchar" MaxLength="50" />
+    <Property Name="Duration" Type="int" />
+    <Property Name="BillSec" Type="int" />
+    <Property Name="AccountCode" Type="varchar" MaxLength="20" />
+    <Property Name="dContext" Type="varchar" MaxLength="50" />
+    <Property Name="Channel" Type="varchar" MaxLength="50" />
+    <Property Name="DstChannel" Type="varchar" MaxLength="50" />
+    <Property Name="Destination" Type="varchar" MaxLength="150" />
+    <Property Name="BillingAmount" Type="float" />
+    <Property Name="ClientID" Type="int" />
+    <Property Name="InvoiceID" Type="int" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="CDRSourceID" Type="int" />
+  </EntityType>
+  <EntityType Name="CDRSource">
+    <Key>
+      <PropertyRef Name="CDRSourceID" />
+    </Key>
+    <Property Name="CDRSourceID" Type="int" Nullable="false" />
+    <Property Name="ServerDesc" Type="varchar" MaxLength="50" />
+    <Property Name="ServerIP" Type="varchar" MaxLength="20" />
+    <Property Name="LastDownload" Type="datetime" />
+    <Property Name="DisabledInd" Type="varchar" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="ClientID" />
+    </Key>
+    <Property Name="ClientID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ClientDesc" Type="varchar" MaxLength="255" />
+    <Property Name="RangeFrom" Type="int" />
+    <Property Name="RangeTo" Type="int" />
+    <Property Name="ClientCode" Type="varchar" MaxLength="255" />
+    <Property Name="AccountingCode" Type="varchar" MaxLength="20" />
+    <Property Name="ClientEmailAddress" Type="varchar" MaxLength="50" />
+    <Property Name="ClientCellularNumber" Type="nchar" MaxLength="10" />
+    <Property Name="IdPreferredContactMethod" Type="int" />
+    <Property Name="MaxCallDuration" Type="int" />
+    <Property Name="MaxCallPrice" Type="decimal" Precision="16" Scale="2" />
+    <Property Name="MaxIntCallDuration" Type="int" />
+    <Property Name="MaxIntCallPrice" Type="decimal" Precision="16" Scale="2" />
+    <Property Name="LastUpdated" Type="date" />
+  </EntityType>
+  <EntityType Name="Cost">
+    <Key>
+      <PropertyRef Name="CostID" />
+    </Key>
+    <Property Name="CostID" Type="int" Nullable="false" />
+    <Property Name="Destination" Type="varchar" MaxLength="150" />
+    <Property Name="PreFix" Type="varchar" MaxLength="10" />
+    <Property Name="CityCode" Type="varchar" MaxLength="15" />
+    <Property Name="ConnectionCost" Type="float" />
+    <Property Name="CostPerMin" Type="float" />
+    <Property Name="CostPerSec" Type="float" />
+  </EntityType>
+  <EntityType Name="CostLocal">
+    <Key>
+      <PropertyRef Name="CostLocalID" />
+    </Key>
+    <Property Name="CostLocalID" Type="int" Nullable="false" />
+    <Property Name="Destination" Type="varchar" MaxLength="150" />
+    <Property Name="PreFix" Type="varchar" MaxLength="10" />
+    <Property Name="CityCode" Type="varchar" MaxLength="15" />
+    <Property Name="ConnectionCost" Type="float" />
+    <Property Name="CostPerMin" Type="float" />
+    <Property Name="CostPerSec" Type="float" />
+    <Property Name="CostPerMinAH" Type="float" />
+    <Property Name="CostPerSecAH" Type="float" />
+  </EntityType>
+  <EntityType Name="Invoice">
+    <Key>
+      <PropertyRef Name="InvoiceID" />
+    </Key>
+    <Property Name="InvoiceID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="InvoiceDate" Type="datetime" />
+    <Property Name="UserID" Type="int" />
+  </EntityType>
+  <EntityType Name="PreferredContactMethod">
+    <Key>
+      <PropertyRef Name="IdPreferredContactMethod" />
+    </Key>
+    <Property Name="IdPreferredContactMethod" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PreferredContactMethodDescription" Type="varchar" Nullable="false" MaxLength="15" />
+  </EntityType>
+  <EntityType Name="Profile">
+    <Key>
+      <PropertyRef Name="ProfileID" />
+    </Key>
+    <Property Name="ProfileID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ProfileName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ProfileID" Type="int" Nullable="false" />
+    <Property Name="UserName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="UserPassword" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="ClientID" Type="int" />
+  </EntityType>
+  <Association Name="FK_Billing_CDRSource">
+    <End Role="CDRSource" Type="QCAstBillingModel.Store.CDRSource" Multiplicity="0..1" />
+    <End Role="Billing" Type="QCAstBillingModel.Store.Billing" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CDRSource">
+        <PropertyRef Name="CDRSourceID" />
+      </Principal>
+      <Dependent Role="Billing">
+        <PropertyRef Name="CDRSourceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Billing_Client">
+    <End Role="Client" Type="QCAstBillingModel.Store.Client" Multiplicity="0..1" />
+    <End Role="Billing" Type="QCAstBillingModel.Store.Billing" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="ClientID" />
+      </Principal>
+      <Dependent Role="Billing">
+        <PropertyRef Name="ClientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Billing_Invoice">
+    <End Role="Invoice" Type="QCAstBillingModel.Store.Invoice" Multiplicity="0..1" />
+    <End Role="Billing" Type="QCAstBillingModel.Store.Billing" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Invoice">
+        <PropertyRef Name="InvoiceID" />
+      </Principal>
+      <Dependent Role="Billing">
+        <PropertyRef Name="InvoiceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Billing_User">
+    <End Role="User" Type="QCAstBillingModel.Store.User" Multiplicity="0..1" />
+    <End Role="Billing" Type="QCAstBillingModel.Store.Billing" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Billing">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Client_PreferredContactMethod">
+    <End Role="PreferredContactMethod" Type="QCAstBillingModel.Store.PreferredContactMethod" Multiplicity="0..1" />
+    <End Role="Client" Type="QCAstBillingModel.Store.Client" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PreferredContactMethod">
+        <PropertyRef Name="IdPreferredContactMethod" />
+      </Principal>
+      <Dependent Role="Client">
+        <PropertyRef Name="IdPreferredContactMethod" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Invoice_User">
+    <End Role="User" Type="QCAstBillingModel.Store.User" Multiplicity="0..1" />
+    <End Role="Invoice" Type="QCAstBillingModel.Store.Invoice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Invoice">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Client">
+    <End Role="Client" Type="QCAstBillingModel.Store.Client" Multiplicity="0..1" />
+    <End Role="User" Type="QCAstBillingModel.Store.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="ClientID" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="ClientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_UserProfile">
+    <End Role="Profile" Type="QCAstBillingModel.Store.Profile" Multiplicity="1" />
+    <End Role="User" Type="QCAstBillingModel.Store.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Profile">
+        <PropertyRef Name="ProfileID" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="ProfileID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="fn_diagramobjects" ReturnType="int" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="spCalculateBillig" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="uspCreateInvoice" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ClientId" Type="int" Mode="In" />
+    <Parameter Name="UserId" Type="int" Mode="In" />
+    <Parameter Name="EndDate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="uspInvoiceDetail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ClientId" Type="int" Mode="In" />
+    <Parameter Name="EndDate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="uspInvoiceDetailHistory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="InvoiceId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="uspInvoiceSummary" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ClientId" Type="int" Mode="In" />
+    <Parameter Name="EndDate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="uspInvoiceSummaryClient" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ClientId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="uspInvoiceSummaryHistory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="InvoiceId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="uspRptDetailByOrigin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ClientId" Type="int" Mode="In" />
+    <Parameter Name="Src" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="uspRptInternational" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ClientId" Type="int" Mode="In" />
+    <Parameter Name="StartDate" Type="datetime" Mode="In" />
+    <Parameter Name="EndDate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="uspRptSummaryByOrigin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ClientId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="uspRptTop20ByCost" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ClientId" Type="int" Mode="In" />
+    <Parameter Name="StartDate" Type="datetime" Mode="In" />
+    <Parameter Name="EndDate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="uspRptTop20ByDuration" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ClientId" Type="int" Mode="In" />
+    <Parameter Name="StartDate" Type="datetime" Mode="In" />
+    <Parameter Name="EndDate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="uspUndefinedDestinations" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+</Schema>

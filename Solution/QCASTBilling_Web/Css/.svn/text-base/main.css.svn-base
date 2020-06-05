@@ -1,0 +1,366 @@
+/***********************************************
+* BOF :: PAGE LEVEL STYLES
+***********************************************/
+body 
+{
+	margin: 10px;
+	padding: 0;
+	background: #fff;
+	padding-bottom: 1px;
+	font-size: 68.8%; /* Set base to 11px */
+	/* background: url(../imgs/green-abstract-background.jpg) no-repeat; */
+}
+
+body,td,th
+{
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+body#minwidth-body
+{
+	height: 95%;
+	min-width: 960px;
+}
+
+a,img
+{
+	padding: 0;
+	margin: 0;
+}
+
+img
+{
+	border: 0 none;
+}
+
+.clr
+{
+	clear: both;
+	overflow: hidden;
+	height: 0;
+}
+
+form
+{
+	margin: 0;
+	padding: 0;
+}
+
+* :focus, a:active
+{
+	outline: none
+}
+
+a:link
+{
+	color: #025A8D;
+	text-decoration: none;
+	outline: none;
+}
+
+a:visited
+{
+	color: #025A8D;
+	text-decoration: none;
+	outline: none;
+}
+
+a:hover
+{
+	text-decoration: underline;
+}
+
+/* Header */
+#border-top.h_blue
+{
+	background: url(../imgs/site/j_header_middle.png) repeat-x;
+}
+
+#border-top.h_blue div
+{
+	background: url(../imgs/site/j_header_right.png) 100% 0 no-repeat;
+}
+
+#border-top.h_blue div div
+{
+	background: url(../imgs/site/j_header_left.png) no-repeat;
+	height: 54px;
+}
+
+#border-top .title,
+#border-top .title a
+{
+	font-size: 1.364em;
+	font-weight: bold;
+	color: #fff;
+	line-height: 44px;
+	padding-right: 14px;
+	float: right;
+}
+
+#border-top .logo
+{
+	display: block;
+	width: auto;
+	padding: 7px 0 0 14px;
+}
+
+#border-bottom
+{
+	clear: both;
+	background: url(../imgs/site/j_bottom.png) repeat-x;
+}
+
+#border-bottom div
+{
+	background: url(../imgs/site/j_corner_br.png) 100% 0 no-repeat;
+}
+
+#border-bottom div div
+{
+	background: url(../imgs/site/j_corner_bl.png) no-repeat;
+	height: 11px;
+}
+
+#header-box
+{
+	border: 1px solid #ccc;
+	background: #f0f0f0;
+	padding:5px;
+}
+/* End of Header */
+/* Toolbar */
+#header-box
+{
+	border: 1px solid #ccc;
+	background: #f0f0f0;
+}
+
+#module-status
+{
+	float: right;
+}
+
+#module-status span
+{
+	display: block;
+	float: left;
+	line-height: 16px;
+	padding: 4px 10px 0 22px;
+	margin-bottom: 5px;
+}
+
+#module-status .logout
+{
+	background: url(../imgs/site/exit_01.png) 3px 3px no-repeat;
+}
+/* End of Toolbar */
+/* Main content */
+#content-box
+{
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+	float: left;
+	width: 99.85%;
+}
+
+#content-box .padding
+{
+	padding: 10px 10px 0 10px;
+}
+
+#border-bottom
+{
+	clear: both;
+	background: url(../imgs/site/j_bottom.png) repeat-x;
+}
+
+#border-bottom div
+{
+	background: url(../imgs/site/j_corner_br.png) 100% 0 no-repeat;
+}
+
+#border-bottom div div
+{
+	background: url(../imgs/site/j_corner_bl.png) no-repeat;
+	height: 11px;
+}
+
+div#element-box div.m form table.adminlist tr td a {
+	font-size: 1.1em;
+}
+
+div#element-box div.m form table.adminlist tr td div.button2-left.smallsub a {
+	font-size: 1em;
+}
+
+div#element-box div.m form table.adminlist tr td p.smallsub a,
+div#element-box div.m div.pane-slider form table.adminlist a {
+	font-size: 1em;
+}
+
+/* End of main content*/
+/* Control panel */
+#cpanel div.icon {
+	text-align: center;
+	margin-right: 15px;
+	float: left;
+	margin-bottom: 15px;
+	background-color: #fff;
+}
+
+#cpanel div.icon a
+{
+	display: block;
+	float: left;
+	border: 1px solid #eaeaea;
+	height: 97px;
+	width: 108px;
+	color: #565656;
+	vertical-align: middle;
+	text-decoration: none;
+}
+
+#cpanel div.icon a:hover,
+#cpanel div.icon a:focus,
+#cpanel div.icon a:active
+{
+	border-left: 1px solid #eee;
+	border-top: 1px solid #eee;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	background: #fbfbfb;
+	color: #025A8D;
+}
+
+#cpanel img
+{
+	padding: 10px 0;
+	margin: 0 auto;
+}
+
+#cpanel span
+{
+	display: block;
+	text-align: center;
+}
+
+div.cpanel-left
+{
+	width: 54%;
+	float: left;
+}
+
+div.cpanel-right
+{
+	width: 45%;
+	float: right;
+}
+/* End of control panel */
+/* Footer */
+#footer .copyright
+{
+	margin: 10px; text-align: center;
+}
+/* End of footer */
+
+table
+{
+	font-family:arial, verdana;
+	font-size:12px;
+    margin-top: 0px;
+}
+
+td
+{
+	font-family:arial, Helvetica;
+	font-size:11px;
+}
+
+.tddata
+{
+	background-color:#FFFFFF;
+	color:#000000;
+	font-family:tahoma,Helvetica;
+	font-size:11px;
+	padding:5px;
+}
+
+.tdheader
+{
+	background-color:#dadada;
+	color:#000000;
+	font-family:tahoma,Helvetica;
+	font-size:11px;
+	padding:7px;
+    border: 1px solid #ccc;
+}
+
+h2
+{
+	font-size:18px;
+	margin: 0px;
+}
+
+fieldset { font-weight:bold;padding: 0px 10px 5px 5px; }
+
+select, input, button, textarea { font: 11px Tahoma,Verdana,sans-serif; padding-left:3px; }
+
+button { width: 70px;height:30px; }
+
+.space { padding: 2px; }
+
+.PageHeading
+{
+    padding:5px; 
+    background-color: #fff; 
+    border:1px solid #ccc; 
+    font: 16px segoe ui, Tahoma,Verdana,sans-serif;
+    font-weight: bold;
+}
+
+/***********************************************
+* EOF :: PAGE LEVEL STYLES
+***********************************************/
+
+/***********************************************
+* BOF :: NAV STYLES
+***********************************************/
+.divselector
+{
+	background: #efefef url(../imgs/icon_btn_01.gif) 100% no-repeat;
+	border:1px solid #ccc;
+	padding:12px;
+    margin: 10px;
+	margin-bottom:7px;
+	cursor: hand;
+	background-position: 3px 2px;
+}
+/***********************************************
+* EOF :: NAV STYLES
+***********************************************/
+
+.txtSty80
+{
+    font: 12px Tahoma,Verdana,sans-serif;
+    width: 80px;
+}
+
+.txtSty160
+{
+    font: 12px Tahoma,Verdana,sans-serif;
+    width: 160px;
+}
+
+.input-textarea230x40
+{ 
+	font-family: Tahoma, trebuchet ms,verdana;
+	font-size:12px;
+	color: #000;
+	height:300px;
+	width:360px;
+	border:1px solid #333;
+	padding:1px;
+	padding-left:3px;
+}
+

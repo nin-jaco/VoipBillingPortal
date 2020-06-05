@@ -1,0 +1,394 @@
+﻿body   
+{
+    background: #4396CA;
+    font-size: 13px;
+    font-family: "Helvetica Neue", "Lucida Grande", "Segoe UI", Arial, Helvetica, Verdana, sans-serif;
+    margin: 0px 0px;
+    color: #696969;
+}
+h1
+{
+    font-size: 24px;
+    font-weight:normal;
+    color:#0C3F4E;
+}
+h2
+{
+    color:#C80020;
+    font-size:23px;
+    font-weight:normal;
+    }
+.boldText
+{
+    color:#0C3F4E;
+    font-weight:bold;
+    }
+a:link, a:visited
+{
+    color: #0196CD;
+    text-decoration: none;
+}
+a:active
+{
+    color: #0196CD;
+    text-decoration: none;
+}
+a:hover
+{
+    color: #0196CD;
+    text-decoration: underline;
+}
+.page
+{
+    width: 960px;
+    margin: 0px auto 0px auto;
+}
+.title
+{
+    width: 960px;
+    height:96px;
+    background-image:url('../Images/final2_r1_c1_s1.jpg');
+    background-repeat:no-repeat;
+}
+.topNav
+{
+    width:960px;
+    height:37px;
+    padding:0px 0px;
+    margin:0px 0px;
+}
+.searchBox
+{
+    height:52px;
+    width:960px;
+    background-image:url('../Images/final2_r3_c1_s1.jpg');
+    background-repeat:no-repeat;
+    text-align:right;
+    }
+.main
+{
+    padding: 0px 12px;
+    min-height: 420px;
+    background-color:White;
+    background-image:url('../Images/final_r4_c1.jpg');
+    background-repeat:repeat-x;
+}
+.clear
+{
+    clear: both;
+}
+div.hideSkiplink
+{
+    background-color:transparent;
+    background-image:url('../Images/final_r2_c1.jpg');
+    background-repeat:no-repeat;
+    width:960px;
+    height:35px;
+}
+.warningText
+{
+    font-size:x-small;
+    font-style:italic;
+    font-weight:bold;
+    color:#C80020;
+    }
+.searchCriteriaTop
+{
+    background-image:url('../images/Search_Criteria.jpg'); 
+    background-repeat:no-repeat; 
+    height:35px;
+}
+.searchResultsTop
+{
+    background-image:url('../images/Search_Results_Top.jpg'); 
+    background-repeat:no-repeat; 
+    height:35px;
+    }
+.userManagementTop
+{
+    background-image:url('../images/userManagementTop.png'); 
+    background-repeat:no-repeat; 
+    height:35px;
+    width:620px;
+    }
+ .clientManagementTop
+{
+    background-image:url('../images/clientManagementTop.png'); 
+    background-repeat:no-repeat; 
+    height:35px;
+    width:620px;
+    }
+.loginTop
+{
+    background-image:url('../images/login_top.png'); 
+    background-repeat:no-repeat;
+    height:35px;
+    }   
+.pageFooter
+{
+    background-image:url('../images/footer.jpg');
+    background-repeat:no-repeat;
+    width:960px;
+    height:108px;
+    }
+.footerTable
+{
+    width:100%; 
+    padding-left:40px; 
+    color:#6A9AA6; 
+    font-size:12px;
+    padding-top:20px;
+}   
+.Menu 
+{
+    background-image:url('../Images/final_r2_c1.jpg');
+    background-repeat:no-repeat;
+    background-color:transparent;
+    width:960px;
+    height:35px;
+    margin:0px 0px;
+    padding:0px 0px;
+      }
+.Menu ul      
+{
+    background:transparent;
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    width: auto;
+    }
+Menu ul li a, div.menu ul li a:visited
+{    
+    background:transparent;    
+    text-align:center;       
+    color: #678F9B;
+    display: block;
+    line-height: 1.35em;
+    padding:0px 2px;
+    text-decoration: none;
+    white-space: nowrap;
+    }
+.Menu ul li a    
+{
+    color: #678F9B;    
+    padding: 0px 2px 0px;    
+    padding-left:8px !important;    
+    border-bottom: 0;
+    }
+.Menu ul li a:hover   
+{
+    background-image:url('../Images/selectedBack.jpg');
+    background-repeat:repeat-x;
+    color: White;
+    text-decoration:none;
+    height:35px;
+    }
+.Menu ul li a:active    
+{
+    color: White;
+    text-decoration:none;
+    background-image:url('../Images/selectedBack.jpg');
+    background-repeat:repeat-x;
+    height:35px;
+    }
+.t
+{
+    cursor:pointer}
+.loginTable
+{
+    top: 148px;
+    width:300px;
+    background-color:White;
+    border:0;
+    text-align:center;
+    }
+.textboxStyle
+{
+    width: 250px;
+	background: transparent url('../Images/textboxBack.png') no-repeat;
+	color : #747862;
+	height:20px;
+	border:0;
+	padding:4px 4px 4px 4px;
+	margin-bottom:0px;
+    }
+.textboxStyleSmall
+{
+    width: 140px;
+	background: transparent url('../Images/textboxBackSmall.png') no-repeat;
+	color : #747862;
+	height:20px;
+	border:0;
+	padding:4px 8px;
+	margin-bottom:0px;
+    }
+.ddlStyle
+{
+    color: #747862;
+    width:140px;
+    }
+.textboxDate
+{
+    width: 102px;
+	background: transparent url('../Images/dateTextboxBack.png') no-repeat;
+	color : #747862;
+	height:24px;
+	border:0;
+	padding:4px 2px 0px 8px;
+    }
+.loginLeftBorder
+{
+    background-image:url('../Images/left.png');
+    background-repeat:repeat-y; 
+    width:4px;
+    }
+.loginRightBorder
+{
+    background-repeat:repeat-y; 
+    background-image:url('../Images/right.png'); 
+    width:4px;
+    }
+.searchTextbox
+{
+    background-image: url('../Images/search_r1_c1_s1.png');
+    background-repeat:no-repeat;
+    background-color:transparent;
+    width: 217px;
+    height: 26px;
+    float: left;
+    padding: 2px;
+    border: 0;
+    outline:none;
+    margin-bottom:0px;
+}
+.searchButton
+{
+    background-image: url('../Images/search_r1_c2_s1.png');
+    background-color:transparent;
+    color: #fff;
+    font-weight: bold; 
+    width: 26px; 
+    height: 26px;
+    border: 0;
+    float: left;
+    }
+.pageFooter
+{
+    background-image:url('../images/footer.jpg');
+    background-repeat:no-repeat;
+    width:960px;
+    height:108px;
+    }
+.footerTable
+{
+    width:100%; 
+    padding-left:40px; 
+    color:#6A9AA6; 
+    font-size:12px;
+    padding-top:20px;
+}
+.bodytext
+{
+    padding: 0px 12px;
+    min-height: 380px;
+    background-color:White;
+    background-image:url('../Images/bodyBack.jpg');
+    background-repeat:repeat-x;
+}
+.searchUser
+{
+    width:268px;
+    height:196px;
+    background-image:url('../Images/pagedivision_r1_c1.png');
+    }
+.selectUser
+{
+    width:268px;
+    height:297px;
+    background-image:url('../Images/pagedivision_r2_c1.png');
+}
+.amendUser
+{
+    width:652px;
+    height:493px;
+    background-image:url('../Images/pagedivision_r1_c2.png');
+    background-repeat:no-repeat;
+    }
+.searchClient
+{
+    width:268px;
+    height:184px;
+    background-image:url('../Images/clientPagedivision_r1_c1_s1.png');
+    }
+.selectClient
+{
+    width:268px;
+    height:297px;
+    background-image:url('../Images/clientPagedivision_r2_c1_s1.png');
+}
+.amendClient
+{
+    width:652px;
+    height:720px;
+    background-image:url('../Images/clientPagedivision_r1_c2_s1.png');
+    background-repeat:no-repeat;
+    }
+.billingForm
+{
+    height:129px;
+    background-image:url('../Images/billingPageDivision_r1_c1.png');
+    background-repeat:no-repeat;
+    }
+.reportForm
+{
+    width:920px;
+    height:188px;
+    background-image:url('../Images/reportPageDivision_r1_c1.png');
+    background-repeat:no-repeat;
+    }
+.managementSection
+{
+    width:920px;
+    height:128px;
+    background-image:url('../Images/managementSection1.png');
+    background-repeat:no-repeat;
+    }
+.homeSections
+{
+    width:960px;
+    height:112px;
+    background-image:url('../Images/homeSections.png');
+    background-repeat:no-repeat;
+}
+.radialShadow
+{
+    background-image:url('../Images/radialShadow.png');
+    background-repeat:no-repeat;
+    height:22px;
+    }
+.listboxStyle
+{
+    border:none;
+    }
+.requiredField
+{
+    color:Red;
+    font-size:11px;
+    }
+.smallText
+{
+    font-size:11px;
+    color:#2DA5E5;
+}
+.blockOne
+{
+    margin-left:25px; 
+    width:170px; 
+    -moz-margin-start:35px;
+}
+.blockTwo
+{
+    margin-left:25px;
+    margin-top:55px; 
+    -moz-margin-start:35px;
+}

@@ -1,0 +1,15 @@
+C:\John\Projects\QC Solutions\QC AST Billing\DAL\DAL\bin\Debug\DAL.dll
+C:\John\Projects\QC Solutions\QC AST Billing\DAL\DAL\bin\Debug\DAL.pdb
+C:\John\Projects\QC Solutions\QC AST Billing\DAL\DAL\obj\Debug\ResolveAssemblyReference.cache
+C:\John\Projects\QC Solutions\QC AST Billing\DAL\DAL\obj\Debug\DAL.dll
+C:\John\Projects\QC Solutions\QC AST Billing\DAL\DAL\obj\Debug\DAL.pdb
+C:\Projects\QCSolutions\C#\QC Ast Billing\Solution\DAL\DAL\bin\Debug\DAL.dll
+C:\Projects\QCSolutions\C#\QC Ast Billing\Solution\DAL\DAL\bin\Debug\DAL.pdb
+C:\Projects\QCSolutions\C#\QC Ast Billing\Solution\DAL\DAL\obj\Debug\ResolveAssemblyReference.cache
+C:\Projects\QCSolutions\C#\QC Ast Billing\Solution\DAL\DAL\obj\Debug\DAL.dll
+C:\Projects\QCSolutions\C#\QC Ast Billing\Solution\DAL\DAL\obj\Debug\DAL.pdb
+C:\Users\Jaco\Documents\Projects\QCAstBilling\Solution\DAL\DAL\bin\Debug\DAL.dll
+C:\Users\Jaco\Documents\Projects\QCAstBilling\Solution\DAL\DAL\bin\Debug\DAL.pdb
+C:\Users\Jaco\Documents\Projects\QCAstBilling\Solution\DAL\DAL\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Jaco\Documents\Projects\QCAstBilling\Solution\DAL\DAL\obj\Debug\DAL.dll
+C:\Users\Jaco\Documents\Projects\QCAstBilling\Solution\DAL\DAL\obj\Debug\DAL.pdb

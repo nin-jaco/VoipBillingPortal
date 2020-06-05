@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="4eccb870-9713-4820-8b2d-038c223ed629" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8732/QCAstWcfService/QCAstService/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="d62dcd66-fe08-4303-9f9b-3f6a95838164" SourceId="1" SourceUrl="http://localhost:8732/QCAstWcfService/QCAstService/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="ac1a154d-2938-4bd5-a75c-b19508c9bc04" SourceId="1" SourceUrl="http://localhost:8732/QCAstWcfService/QCAstService/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="c4545ef5-f6e5-4e01-b266-96e2dfb34e63" SourceId="1" SourceUrl="http://localhost:8732/QCAstWcfService/QCAstService/mex" />
+    <MetadataFile FileName="QCAstSolution.Classes.xsd" MetadataType="Schema" ID="926056eb-3343-48be-b9e9-0493a3038605" SourceId="1" SourceUrl="http://localhost:8732/QCAstWcfService/QCAstService/mex" />
+    <MetadataFile FileName="System.Collections.Generic.xsd" MetadataType="Schema" ID="bc3b38d6-d8df-4e67-98ba-c081fd5930e4" SourceId="1" SourceUrl="http://localhost:8732/QCAstWcfService/QCAstService/mex" />
+    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="b0825228-374d-41ca-ba58-dd1b7ef1b1ef" SourceId="1" SourceUrl="http://localhost:8732/QCAstWcfService/QCAstService/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

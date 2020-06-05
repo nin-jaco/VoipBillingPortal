@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/QCAstSolution.Classes" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/QCAstSolution.Classes" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="User">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IdClient" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IdProfile" type="xs:int" />
+      <xs:element minOccurs="0" name="IdUser" type="xs:int" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="User" nillable="true" type="tns:User" />
+  <xs:complexType name="ClientProfile">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdClient" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IdProfile" type="xs:int" />
+      <xs:element minOccurs="0" name="IdUser" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ClientProfile" nillable="true" type="tns:ClientProfile" />
+  <xs:complexType name="ArrayOfClient">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Client" nillable="true" type="tns:Client" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfClient" nillable="true" type="tns:ArrayOfClient" />
+  <xs:complexType name="Client">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountingCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CellularNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClientCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClientName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContactMethod" type="xs:int" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdClient" type="xs:int" />
+      <xs:element minOccurs="0" name="LastUpdated" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="MaxCallDuration" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="MaxCallPrice" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MaxIntCallDuration" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="MaxIntCallPrice" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="RangeFrom" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="RangeTo" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Client" nillable="true" type="tns:Client" />
+  <xs:complexType name="ArrayOfUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="User" nillable="true" type="tns:User" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUser" nillable="true" type="tns:ArrayOfUser" />
+  <xs:complexType name="ArrayOfProfile">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Profile" nillable="true" type="tns:Profile" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProfile" nillable="true" type="tns:ArrayOfProfile" />
+  <xs:complexType name="Profile">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IdProfile" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Profile" nillable="true" type="tns:Profile" />
+  <xs:complexType name="ArrayOfPreferredContactMethod">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PreferredContactMethod" nillable="true" type="tns:PreferredContactMethod" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPreferredContactMethod" nillable="true" type="tns:ArrayOfPreferredContactMethod" />
+  <xs:complexType name="PreferredContactMethod">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdMethod" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PreferredContactMethod" nillable="true" type="tns:PreferredContactMethod" />
+  <xs:complexType name="ArrayOfInvoice">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Invoice" nillable="true" type="tns:Invoice" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInvoice" nillable="true" type="tns:ArrayOfInvoice" />
+  <xs:complexType name="Invoice">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreatedBy" type="xs:int" />
+      <xs:element minOccurs="0" name="CreatedOn" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IdClient" type="xs:int" />
+      <xs:element minOccurs="0" name="IdInvoice" type="xs:int" />
+      <xs:element minOccurs="0" name="InvoiceDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TotalCost" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="TotalDuration" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Invoice" nillable="true" type="tns:Invoice" />
+  <xs:complexType name="ArrayOfBilling">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Billing" nillable="true" type="tns:Billing" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBilling" nillable="true" type="tns:ArrayOfBilling" />
+  <xs:complexType name="Billing">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BillingAmount" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="BillingSeconds" type="xs:int" />
+      <xs:element minOccurs="0" name="CLID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CallDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CallType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Context" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Destination" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DestinationChannel" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DestinationDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Duration" type="xs:int" />
+      <xs:element minOccurs="0" name="IdBilling" type="xs:int" />
+      <xs:element minOccurs="0" name="IdCDRSource" type="xs:int" />
+      <xs:element minOccurs="0" name="IdClient" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IdInvoice" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IdUser" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Source" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SourceChannel" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Billing" nillable="true" type="tns:Billing" />
+  <xs:complexType name="ArrayOfInvoiceDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="InvoiceDetail" nillable="true" type="tns:InvoiceDetail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInvoiceDetail" nillable="true" type="tns:ArrayOfInvoiceDetail" />
+  <xs:complexType name="InvoiceDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Amount" type="xs:double" />
+      <xs:element minOccurs="0" name="CallDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CallType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Destination" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Duration" type="xs:int" />
+      <xs:element minOccurs="0" name="Origin" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InvoiceDetail" nillable="true" type="tns:InvoiceDetail" />
+  <xs:complexType name="ArrayOfInvoiceSummary">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="InvoiceSummary" nillable="true" type="tns:InvoiceSummary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInvoiceSummary" nillable="true" type="tns:ArrayOfInvoiceSummary" />
+  <xs:complexType name="InvoiceSummary">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Amount" type="xs:double" />
+      <xs:element minOccurs="0" name="CallType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Duration" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InvoiceSummary" nillable="true" type="tns:InvoiceSummary" />
+  <xs:complexType name="ArrayOfReport">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Report" nillable="true" type="tns:Report" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfReport" nillable="true" type="tns:ArrayOfReport" />
+  <xs:complexType name="Report">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IdReport" type="xs:int" />
+      <xs:element minOccurs="0" name="ReportName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Report" nillable="true" type="tns:Report" />
+  <xs:complexType name="ArrayOfTopTwenty">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TopTwenty" nillable="true" type="tns:TopTwenty" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTopTwenty" nillable="true" type="tns:ArrayOfTopTwenty" />
+  <xs:complexType name="TopTwenty">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Amount" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="CallDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CallType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Destination" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Duration" type="xs:int" />
+      <xs:element minOccurs="0" name="Origin" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TopTwenty" nillable="true" type="tns:TopTwenty" />
+  <xs:complexType name="ArrayOfSummaryByOrigin">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SummaryByOrigin" nillable="true" type="tns:SummaryByOrigin" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSummaryByOrigin" nillable="true" type="tns:ArrayOfSummaryByOrigin" />
+  <xs:complexType name="SummaryByOrigin">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Amount" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="Duration" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Origin" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TotalDuration" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SummaryByOrigin" nillable="true" type="tns:SummaryByOrigin" />
+</xs:schema>

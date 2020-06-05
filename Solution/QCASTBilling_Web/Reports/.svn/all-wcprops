@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/Source/!svn/ver/3974/Qcsolutions/C%23/QC%20Ast%20Billing/Solution/QCASTBilling_Web/Reports
+END
+InvoiceDetail.rdlc
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/Source/!svn/ver/3974/Qcsolutions/C%23/QC%20Ast%20Billing/Solution/QCASTBilling_Web/Reports/InvoiceDetail.rdlc
+END
+AccountTotal.rdlc
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/Source/!svn/ver/3956/Qcsolutions/C%23/QC%20Ast%20Billing/Solution/QCASTBilling_Web/Reports/AccountTotal.rdlc
+END
+StatementSummaryBySrc.rdlc
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/Source/!svn/ver/3956/Qcsolutions/C%23/QC%20Ast%20Billing/Solution/QCASTBilling_Web/Reports/StatementSummaryBySrc.rdlc
+END
+Top20ByDuration.rdlc
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/Source/!svn/ver/3974/Qcsolutions/C%23/QC%20Ast%20Billing/Solution/QCASTBilling_Web/Reports/Top20ByDuration.rdlc
+END
+UndefinedDestinations.rdlc
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/Source/!svn/ver/3974/Qcsolutions/C%23/QC%20Ast%20Billing/Solution/QCASTBilling_Web/Reports/UndefinedDestinations.rdlc
+END
+International.rdlc
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/Source/!svn/ver/3956/Qcsolutions/C%23/QC%20Ast%20Billing/Solution/QCASTBilling_Web/Reports/International.rdlc
+END
+Top20ByCost.rdlc
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/Source/!svn/ver/3974/Qcsolutions/C%23/QC%20Ast%20Billing/Solution/QCASTBilling_Web/Reports/Top20ByCost.rdlc
+END
+UndefinedDestinations2.rdlc
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/Source/!svn/ver/3974/Qcsolutions/C%23/QC%20Ast%20Billing/Solution/QCASTBilling_Web/Reports/UndefinedDestinations2.rdlc
+END
+StatementDetailBySrc.rdlc
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/Source/!svn/ver/3956/Qcsolutions/C%23/QC%20Ast%20Billing/Solution/QCASTBilling_Web/Reports/StatementDetailBySrc.rdlc
+END

@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QCAstBillingModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="QCAstBillingEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Billings" EntityType="QCAstBillingModel.Billing" />
+    <EntitySet Name="CDRSources" EntityType="QCAstBillingModel.CDRSource" />
+    <EntitySet Name="Clients" EntityType="QCAstBillingModel.Client" />
+    <EntitySet Name="Costs" EntityType="QCAstBillingModel.Cost" />
+    <EntitySet Name="CostLocals" EntityType="QCAstBillingModel.CostLocal" />
+    <EntitySet Name="Invoices" EntityType="QCAstBillingModel.Invoice" />
+    <EntitySet Name="Profiles" EntityType="QCAstBillingModel.Profile" />
+    <EntitySet Name="sysdiagrams" EntityType="QCAstBillingModel.sysdiagram" />
+    <EntitySet Name="Users" EntityType="QCAstBillingModel.User" />
+    <AssociationSet Name="FK_Billing_CDRSource" Association="QCAstBillingModel.FK_Billing_CDRSource">
+      <End Role="CDRSource" EntitySet="CDRSources" />
+      <End Role="Billing" EntitySet="Billings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Billing_Client" Association="QCAstBillingModel.FK_Billing_Client">
+      <End Role="Client" EntitySet="Clients" />
+      <End Role="Billing" EntitySet="Billings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Billing_Invoice" Association="QCAstBillingModel.FK_Billing_Invoice">
+      <End Role="Invoice" EntitySet="Invoices" />
+      <End Role="Billing" EntitySet="Billings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Billing_User" Association="QCAstBillingModel.FK_Billing_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Billing" EntitySet="Billings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Client" Association="QCAstBillingModel.FK_User_Client">
+      <End Role="Client" EntitySet="Clients" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Invoice_User" Association="QCAstBillingModel.FK_Invoice_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Invoice" EntitySet="Invoices" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_UserProfile" Association="QCAstBillingModel.FK_User_UserProfile">
+      <End Role="Profile" EntitySet="Profiles" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+    <EntitySet Name="PreferredContactMethods" EntityType="QCAstBillingModel.PreferredContactMethod" />
+    <AssociationSet Name="FK_Client_PreferredContactMethod" Association="QCAstBillingModel.FK_Client_PreferredContactMethod">
+      <End Role="PreferredContactMethod" EntitySet="PreferredContactMethods" />
+      <End Role="Client" EntitySet="Clients" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Billing">
+    <Key>
+      <PropertyRef Name="BillingID" />
+    </Key>
+    <Property Name="BillingID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CallType" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+    <Property Name="CallDate" Type="DateTime" />
+    <Property Name="CLID" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Src" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Dst" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Duration" Type="Int32" />
+    <Property Name="BillSec" Type="Int32" />
+    <Property Name="AccountCode" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="dContext" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Channel" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="DstChannel" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Destination" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+    <Property Name="BillingAmount" Type="Double" />
+    <Property Name="ClientID" Type="Int32" />
+    <Property Name="InvoiceID" Type="Int32" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="CDRSourceID" Type="Int32" />
+    <NavigationProperty Name="CDRSource" Relationship="QCAstBillingModel.FK_Billing_CDRSource" FromRole="Billing" ToRole="CDRSource" />
+    <NavigationProperty Name="Client" Relationship="QCAstBillingModel.FK_Billing_Client" FromRole="Billing" ToRole="Client" />
+    <NavigationProperty Name="Invoice" Relationship="QCAstBillingModel.FK_Billing_Invoice" FromRole="Billing" ToRole="Invoice" />
+    <NavigationProperty Name="User" Relationship="QCAstBillingModel.FK_Billing_User" FromRole="Billing" ToRole="User" />
+  </EntityType>
+  <EntityType Name="CDRSource">
+    <Key>
+      <PropertyRef Name="CDRSourceID" />
+    </Key>
+    <Property Name="CDRSourceID" Type="Int32" Nullable="false" />
+    <Property Name="ServerDesc" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ServerIP" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="LastDownload" Type="DateTime" />
+    <Property Name="DisabledInd" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Billings" Relationship="QCAstBillingModel.FK_Billing_CDRSource" FromRole="CDRSource" ToRole="Billing" />
+  </EntityType>
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="ClientID" />
+    </Key>
+    <Property Name="ClientID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ClientDesc" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="RangeFrom" Type="Int32" />
+    <Property Name="RangeTo" Type="Int32" />
+    <Property Name="ClientCode" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="AccountingCode" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Billings" Relationship="QCAstBillingModel.FK_Billing_Client" FromRole="Client" ToRole="Billing" />
+    <NavigationProperty Name="Users" Relationship="QCAstBillingModel.FK_User_Client" FromRole="Client" ToRole="User" />
+    <Property Type="String" Name="ClientEmailAddress" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ClientCellularNumber" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="Int32" Name="IdPreferredContactMethod" />
+    <Property Type="Int32" Name="MaxCallDuration" />
+    <Property Type="Decimal" Name="MaxCallPrice" Precision="16" Scale="2" />
+    <Property Type="Int32" Name="MaxIntCallDuration" />
+    <Property Type="Decimal" Name="MaxIntCallPrice" Precision="16" Scale="2" />
+    <Property Type="DateTime" Name="LastUpdated" />
+    <NavigationProperty Name="PreferredContactMethod" Relationship="QCAstBillingModel.FK_Client_PreferredContactMethod" FromRole="Client" ToRole="PreferredContactMethod" />
+  </EntityType>
+  <EntityType Name="Cost">
+    <Key>
+      <PropertyRef Name="CostID" />
+    </Key>
+    <Property Name="CostID" Type="Int32" Nullable="false" />
+    <Property Name="Destination" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+    <Property Name="PreFix" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="CityCode" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+    <Property Name="ConnectionCost" Type="Double" />
+    <Property Name="CostPerMin" Type="Double" />
+    <Property Name="CostPerSec" Type="Double" />
+  </EntityType>
+  <EntityType Name="CostLocal">
+    <Key>
+      <PropertyRef Name="CostLocalID" />
+    </Key>
+    <Property Name="CostLocalID" Type="Int32" Nullable="false" />
+    <Property Name="Destination" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+    <Property Name="PreFix" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="CityCode" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+    <Property Name="ConnectionCost" Type="Double" />
+    <Property Name="CostPerMin" Type="Double" />
+    <Property Name="CostPerSec" Type="Double" />
+    <Property Name="CostPerMinAH" Type="Double" />
+    <Property Name="CostPerSecAH" Type="Double" />
+  </EntityType>
+  <EntityType Name="Invoice">
+    <Key>
+      <PropertyRef Name="InvoiceID" />
+    </Key>
+    <Property Name="InvoiceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InvoiceDate" Type="DateTime" />
+    <Property Name="UserID" Type="Int32" />
+    <NavigationProperty Name="Billings" Relationship="QCAstBillingModel.FK_Billing_Invoice" FromRole="Invoice" ToRole="Billing" />
+    <NavigationProperty Name="User" Relationship="QCAstBillingModel.FK_Invoice_User" FromRole="Invoice" ToRole="User" />
+  </EntityType>
+  <EntityType Name="Profile">
+    <Key>
+      <PropertyRef Name="ProfileID" />
+    </Key>
+    <Property Name="ProfileID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProfileName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Users" Relationship="QCAstBillingModel.FK_User_UserProfile" FromRole="Profile" ToRole="User" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProfileID" Type="Int32" Nullable="false" />
+    <Property Name="UserName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" Nullable="false" />
+    <Property Name="UserPassword" Type="String" MaxLength="50" Unicode="false" FixedLength="false" Nullable="false" />
+    <Property Name="ClientID" Type="Int32" />
+    <NavigationProperty Name="Billings" Relationship="QCAstBillingModel.FK_Billing_User" FromRole="User" ToRole="Billing" />
+    <NavigationProperty Name="Client" Relationship="QCAstBillingModel.FK_User_Client" FromRole="User" ToRole="Client" />
+    <NavigationProperty Name="Invoices" Relationship="QCAstBillingModel.FK_Invoice_User" FromRole="User" ToRole="Invoice" />
+    <NavigationProperty Name="Profile" Relationship="QCAstBillingModel.FK_User_UserProfile" FromRole="User" ToRole="Profile" />
+  </EntityType>
+  <Association Name="FK_Billing_CDRSource">
+    <End Role="CDRSource" Type="QCAstBillingModel.CDRSource" Multiplicity="0..1" />
+    <End Role="Billing" Type="QCAstBillingModel.Billing" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CDRSource">
+        <PropertyRef Name="CDRSourceID" />
+      </Principal>
+      <Dependent Role="Billing">
+        <PropertyRef Name="CDRSourceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Billing_Client">
+    <End Role="Client" Type="QCAstBillingModel.Client" Multiplicity="0..1" />
+    <End Role="Billing" Type="QCAstBillingModel.Billing" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="ClientID" />
+      </Principal>
+      <Dependent Role="Billing">
+        <PropertyRef Name="ClientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Billing_Invoice">
+    <End Role="Invoice" Type="QCAstBillingModel.Invoice" Multiplicity="0..1" />
+    <End Role="Billing" Type="QCAstBillingModel.Billing" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Invoice">
+        <PropertyRef Name="InvoiceID" />
+      </Principal>
+      <Dependent Role="Billing">
+        <PropertyRef Name="InvoiceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Billing_User">
+    <End Role="User" Type="QCAstBillingModel.User" Multiplicity="0..1" />
+    <End Role="Billing" Type="QCAstBillingModel.Billing" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Billing">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Client">
+    <End Role="Client" Type="QCAstBillingModel.Client" Multiplicity="0..1" />
+    <End Role="User" Type="QCAstBillingModel.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="ClientID" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="ClientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Invoice_User">
+    <End Role="User" Type="QCAstBillingModel.User" Multiplicity="0..1" />
+    <End Role="Invoice" Type="QCAstBillingModel.Invoice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Invoice">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_UserProfile">
+    <End Role="Profile" Type="QCAstBillingModel.Profile" Multiplicity="1" />
+    <End Role="User" Type="QCAstBillingModel.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Profile">
+        <PropertyRef Name="ProfileID" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="ProfileID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="PreferredContactMethod">
+    <Key>
+      <PropertyRef Name="IdPreferredContactMethod" />
+    </Key>
+    <Property Type="Int32" Name="IdPreferredContactMethod" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="PreferredContactMethodDescription" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Clients" Relationship="QCAstBillingModel.FK_Client_PreferredContactMethod" FromRole="PreferredContactMethod" ToRole="Client" />
+  </EntityType>
+  <Association Name="FK_Client_PreferredContactMethod">
+    <End Type="QCAstBillingModel.PreferredContactMethod" Role="PreferredContactMethod" Multiplicity="0..1" />
+    <End Type="QCAstBillingModel.Client" Role="Client" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PreferredContactMethod">
+        <PropertyRef Name="IdPreferredContactMethod" />
+      </Principal>
+      <Dependent Role="Client">
+        <PropertyRef Name="IdPreferredContactMethod" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

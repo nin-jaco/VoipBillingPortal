@@ -1,0 +1,210 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="QCAstWebApplication.Site" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link rel="Stylesheet" href="Styles/StyleSheet.css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <script type="text/javascript" language="javascript">
+        function FP_swapImg() {//v1.0
+            var doc = document, args = arguments, elm, n; doc.$imgSwaps = new Array(); for (n = 2; n < args.length;
+ n += 2) {
+                elm = FP_getObjectByID(args[n]); if (elm) {
+                    doc.$imgSwaps[doc.$imgSwaps.length] = elm;
+                    elm.$src = elm.src; elm.src = args[n + 1];
+                } 
+            }
+        }
+
+        function FP_preloadImgs() {//v1.0
+            var d = document, a = arguments; if (!d.FP_imgs) d.FP_imgs = new Array();
+            for (var i = 0; i < a.length; i++) { d.FP_imgs[i] = new Image; d.FP_imgs[i].src = a[i]; }
+        }
+
+        function FP_getObjectByID(id, o) {//v1.0
+            var c, el, els, f, m, n; if (!o) o = document; if (o.getElementById) el = o.getElementById(id);
+            else if (o.layers) c = o.layers; else if (o.all) el = o.all[id]; if (el) return el;
+            if (o.id == id || o.name == id) return o; if (o.childNodes) c = o.childNodes; if (c)
+                for (n = 0; n < c.length; n++) { el = FP_getObjectByID(id, c[n]); if (el) return el; }
+            f = o.forms; if (f) for (n = 0; n < f.length; n++) {
+                els = f[n].elements;
+                for (m = 0; m < els.length; m++) { el = FP_getObjectByID(id, els[n]); if (el) return el; } 
+            }
+            return null;
+        }
+
+        function FP_swapImgRestore() {//v1.0
+            var doc = document, i; if (doc.$imgSwaps) {
+                for (i = 0; i < doc.$imgSwaps.length; i++) {
+                    var elm = doc.$imgSwaps[i]; if (elm) { elm.src = elm.$src; elm.$src = null; } 
+                }
+                doc.$imgSwaps = null;
+            }
+        }
+    </script>
+</head>
+<body  onload="FP_preloadImgs(/*url*/'Images/final2_r2_c3_s2.jpg',/*url*/'Images/final2_r2_c4_s2.jpg',/*url*/'Images/final2_r2_c5_s2.jpg',/*url*/'Images/final2_r2_c6_s2.jpg',/*url*/'Images/final2_r2_c7_s2.jpg',/*url*/'Images/final2_r2_c8_s2.jpg',/*url*/'Images/final2_r2_c9_s2.jpg')">
+    <form id="form1" runat="server">
+    <div>
+        <center>
+            <table cellpadding="0" cellspacing="0">
+                <tr>
+                    <td class="title"></td>
+                </tr>
+                <tr>
+                    <td class="topNav">
+                        <div id="divAdminMenu" runat="server" style="height: 37px; width: 960px">
+                    <table cellpadding="0" cellspacing="0" style="width:100%; height:37px">
+                        <tr>
+                            <td style="width:9px">
+                                <img src="Images/final2_r2_c1_s1.jpg" style="height:37px" /></td>
+                            <td style="width:95px">
+                                <a href="Default.aspx"><img src="Images/final2_r2_c3_s1.jpg" style="border-width: 0px; height:37px" id="img1" onmouseout="FP_swapImgRestore()" onmouseover="FP_swapImg(1,1,/*id*/'img1',/*url*/'Images/final2_r2_c3_s2.jpg')" /></a></td>
+                            <td style="width:113px">
+                                <a href="AboutUs.aspx"><img src="Images/final2_r2_c4_s1.jpg" style="border-width: 0px; height:37px" id="img2" onmouseout="FP_swapImgRestore()" onmouseover="FP_swapImg(1,1,/*id*/'img2',/*url*/'Images/final2_r2_c4_s2.jpg')" /></a></td>
+                            <td style="width:167px">
+                                <a href="UserManagement.aspx"><img src="Images/final2_r2_c5_s1.jpg" style="border-width: 0px; height:37px" id="img3" onmouseout="FP_swapImgRestore()" onmouseover="FP_swapImg(1,1,/*id*/'img3',/*url*/'Images/final2_r2_c5_s2.jpg')" /></a></td>
+                            <td style="width:180px">
+                                <a href="ClientManagement.aspx"><img src="Images/final2_r2_c6_s1.jpg" style="border-width: 0px; height:37px" id="img4" onmouseout="FP_swapImgRestore()" onmouseover="FP_swapImg(1,1,/*id*/'img4',/*url*/'Images/final2_r2_c6_s2.jpg')" /></a></td>
+                            <td style="width:102px">
+                                <a href="AdminBilling.aspx"><img src="Images/final2_r2_c7_s1.jpg" style="border-width: 0px; height:37px" id="img5" onmouseout="FP_swapImgRestore()" onmouseover="FP_swapImg(1,1,/*id*/'img5',/*url*/'Images/final2_r2_c7_s2.jpg')" /></a></td>
+                            <td style="width:104px">
+                                <a href="Reports.aspx"><img src="Images/final2_r2_c8_s1.jpg" 
+                                    style="border-width: 0px; height:37px" id="img6" onmouseout="FP_swapImgRestore()" onmouseover="FP_swapImg(1,1,/*id*/'img6',/*url*/'Images/final2_r2_c8_s2.jpg')" /></a></td>
+                            <td style="width:105px">
+                                <a href="LogOff.aspx"><img src="Images/final2_r2_c9_s1.jpg" style="border-width: 0px; height:37px" id="img7" onmouseout="FP_swapImgRestore()" onmouseover="FP_swapImg(1,1,/*id*/'img7',/*url*/'Images/final2_r2_c9_s2.jpg')" /></a></td>                            
+                            <td style="background-image:url('Images/menuRight_r1_c1_s1.jpg'); background-repeat:repeat-x; height:37px; width:42px"></td>
+                            <td style="width:42px; background-image:url('Images/menuRight_r1_c2_s1.jpg'); height:37px"></td>
+                        </tr>
+                    </table>
+                </div>
+                        <div id="divClientMenu" runat="server" style="height: 37px; width: 960px">
+    <table cellpadding="0" cellspacing="0" style="width:960px">
+        <tr>
+            <td style="width:9px">
+                <img src="Images/final2_r2_c1_s1.jpg" /></td>
+            <td style="width:95px">
+                <a href="Default.aspx">
+                <img src="Images/final2_r2_c3_s1.jpg" style="border-width: 0px" id="img8" onmouseout="FP_swapImgRestore()" onmouseover="FP_swapImg(1,1,/*id*/'img8',/*url*/'Images/final2_r2_c3_s2.jpg')" /></a></td>
+            <td style="width:113px">
+                <a href="AboutUs.aspx">
+                <img src="Images/final2_r2_c4_s1.jpg" style="border-width: 0px" id="img9" onmouseout="FP_swapImgRestore()" onmouseover="FP_swapImg(1,1,/*id*/'img9',/*url*/'Images/final2_r2_c4_s2.jpg')" /></a></td>
+            <td style="width:104px">
+                <a href="ClientBilling.aspx">
+	            <img src="Images/final2_r2_c8_s1.jpg" style="border-width: 0px" id="img10" onmouseout="FP_swapImgRestore()" onmouseover="FP_swapImg(1,1,/*id*/'img10',/*url*/'Images/final2_r2_c8_s2.jpg')" /></a></td>
+            <td style="width:105px">
+                <a href="LogOff.aspx">
+                <img src="Images/final2_r2_c9_s1.jpg" style="border-width: 0px" id="img11" onmouseout="FP_swapImgRestore()" onmouseover="FP_swapImg(1,1,/*id*/'img11',/*url*/'Images/final2_r2_c9_s2.jpg')" /></a></td>
+            <td style="background-image:url('Images/menuRight_r1_c1_s1.jpg'); background-repeat:repeat-x"></td>
+            <td style="width:42px; background-image:url('Images/menuRight_r1_c2_s1.jpg')"></td>
+        </tr>
+    </table>
+</div>
+                        <div id="divUserMenu" runat="server" style="height: 37px; width: 960px">
+                    <table cellpadding="0" cellspacing="0" style="width:960px">
+                        <tr>
+                            <td style="width:9px">
+                                <img src="Images/final2_r2_c1_s1.jpg" /></td>
+                            <td style="width:95px">
+                                <a href="Default.aspx">
+                                <img src="Images/final2_r2_c3_s1.jpg" style="border-width: 0px" id="img12" onmouseout="FP_swapImgRestore()" onmouseover="FP_swapImg(1,1,/*id*/'img12',/*url*/'Images/final2_r2_c3_s2.jpg')" /></a></td>
+                            <td style="width:113px">
+                                <a href="AboutUs.aspx">
+                                <img src="Images/final2_r2_c4_s1.jpg" style="border-width: 0px" id="img13" onmouseout="FP_swapImgRestore()" onmouseover="FP_swapImg(1,1,/*id*/'img13',/*url*/'Images/final2_r2_c4_s2.jpg')" /></a></td>
+                            <td style="width:102px">
+                                <a href="ClientBilling.aspx">
+							    <img src="Images/final2_r2_c7_s1.jpg" style="border-width: 0px" id="img14" onmouseout="FP_swapImgRestore()" onmouseover="FP_swapImg(1,1,/*id*/'img14',/*url*/'Images/final2_r2_c7_s2.jpg')" /></a></td>
+                            <td style="width:105px">
+                                <a href="LogOff.aspx">
+                                <img src="Images/final2_r2_c9_s1.jpg" style="border-width: 0px" id="img15" onmouseout="FP_swapImgRestore()" onmouseover="FP_swapImg(1,1,/*id*/'img15',/*url*/'Images/final2_r2_c9_s2.jpg')" /></a></td>
+                            <td style="background-image:url('Images/menuRight_r1_c1_s1.jpg'); background-repeat:repeat-x"></td>
+                            <td style="width:42px; background-image:url('Images/menuRight_r1_c2_s1.jpg')"></td>
+                        </tr>
+                    </table>
+                </div>
+                        <div id="divDatamanagerMenu" runat="server" style="height: 37px; width: 960px">
+                             <table cellpadding="0" cellspacing="0" style="width:960px">
+                        <tr>
+                            <td style="width:9px">
+                                <img src="Images/final2_r2_c1_s1.jpg" /></td>
+                            <td style="width:95px">
+                                <a href="Default.aspx">
+                                <img src="Images/final2_r2_c3_s1.jpg" style="border-width: 0px" id="img16" onmouseout="FP_swapImgRestore()" onmouseover="FP_swapImg(1,1,/*id*/'img16',/*url*/'Images/final2_r2_c3_s2.jpg')" /></a></td>
+                            <td style="width:113px">
+                                <a href="AboutUs.aspx">
+                                <img src="Images/final2_r2_c4_s1.jpg" style="border-width: 0px" id="img17" onmouseout="FP_swapImgRestore()" onmouseover="FP_swapImg(1,1,/*id*/'img17',/*url*/'Images/final2_r2_c4_s2.jpg')" /></a></td>
+                            <td style="width:167px">
+                                <a href="UserManagement.aspx">
+                                <img src="Images/final2_r2_c5_s1.jpg" style="border-width: 0px" id="img18" onmouseout="FP_swapImgRestore()" onmouseover="FP_swapImg(1,1,/*id*/'img18',/*url*/'../Images/final2_r2_c5_s2.jpg')" /></a></td>
+                            <td style="width:105px">
+                                <a href="LogOff.aspx">
+                                <img src="Images/final2_r2_c9_s1.jpg" style="border-width: 0px" id="img19" onmouseout="FP_swapImgRestore()" onmouseover="FP_swapImg(1,1,/*id*/'img19',/*url*/'Images/final2_r2_c9_s2.jpg')" /></a></td>
+                            <td style="background-image:url('Images/menuRight_r1_c1_s1.jpg'); background-repeat:repeat-x"></td>
+                            <td style="width:42px; background-image:url('Images/menuRight_r1_c2_s1.jpg')"></td>
+                        </tr>
+                    </table>
+                        </div>
+                        <div id="divClientManagerMenu" runat="server" style="height: 37px; width: 960px">
+                            <table cellpadding="0" cellspacing="0" style="width:960px">
+                        <tr>
+                            <td style="width:9px">
+                                <img src="Images/final2_r2_c1_s1.jpg" /></td>
+                            <td style="width:95px">
+                                <a href="Default.aspx">
+                                <img src="Images/final2_r2_c3_s1.jpg" style="border-width: 0px" id="img20" onmouseout="FP_swapImgRestore()" onmouseover="FP_swapImg(1,1,/*id*/'img20',/*url*/'Images/final2_r2_c3_s2.jpg')" /></a></td>
+                            <td style="width:113px">
+                                <a href="AboutUs.aspx">
+                                <img src="Images/final2_r2_c4_s1.jpg" style="border-width: 0px" id="img21" onmouseout="FP_swapImgRestore()" onmouseover="FP_swapImg(1,1,/*id*/'img21',/*url*/'Images/final2_r2_c4_s2.jpg')" /></a></td>
+                            <td style="width:180px">
+                                <a href="ClientManagement.aspx">
+                                <img src="Images/final2_r2_c6_s1.jpg" style="border-width: 0px" id="img22" onmouseout="FP_swapImgRestore()" onmouseover="FP_swapImg(1,1,/*id*/'img22',/*url*/'../Images/final2_r2_c6_s2.jpg')" /></a></td>
+                            <td style="width:105px">
+                                <a href="LogOff.aspx">
+                                <img src="Images/final2_r2_c9_s1.jpg" style="border-width: 0px" id="img23" onmouseout="FP_swapImgRestore()" onmouseover="FP_swapImg(1,1,/*id*/'img23',/*url*/'Images/final2_r2_c9_s2.jpg')" /></a></td>
+                            <td style="background-image:url('Images/menuRight_r1_c1_s1.jpg'); background-repeat:repeat-x"></td>
+                            <td style="width:42px; background-image:url('Images/menuRight_r1_c2_s1.jpg')"></td>
+                        </tr>
+                    </table>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="searchBox">
+                        <table align="right" style="margin-right:15px; width:300px; text-align:right">
+                            <tr>
+                                <td>
+                                    <asp:TextBox runat="server" CssClass="searchTextbox" ID="tbSearchText" />
+                                    <asp:Button runat="server" CssClass="searchButton" ID="btnSearch" />
+                                </td>
+                            </tr>                            
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="bodytext" valign="top">
+                        <asp:ContentPlaceHolder ID="bodyContent" runat="server"></asp:ContentPlaceHolder>
+                    </td>
+                </tr>
+                <tr>
+                    <td><img src="Images/bottomShadow.png" /></td>
+                </tr>
+                <tr>
+                    <td class="pageFooter">
+                        <table cellpadding="0" cellspacing="0" class="footerTable">
+                            <tr>
+                                <td style="width:50%">&copy; Copyright QC Solutions, All rights reserved, 2012</td>
+                                <td style="width:50%; text-align:left"><a href="Default.aspx">Home</a> | <a href="AboutUs.aspx">About Us</a> | <a href="LogOff.aspx">Log Off</a></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                
+            </table>
+        </center>
+    </div>
+    </form>
+</body>
+</html>

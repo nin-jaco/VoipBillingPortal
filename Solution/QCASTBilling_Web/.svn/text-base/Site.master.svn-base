@@ -1,0 +1,59 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="SiteMaster" %>
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+    <title></title>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <script language="javascript" type="text/javascript">
+    function LoginRedirect()
+    {
+        if(document.forms[0].h_logintype.value == 'user')
+        {
+            location.href = "../Pages/UserLogin.aspx";
+        }
+        else if (document.forms[0].h_logintype.value == 'client')
+        {
+            location.href = "../Pages/ClientLogin.aspx";
+        }
+
+        return false;
+    }
+    
+    </script>
+</head>
+<body>
+    <form runat="server">
+    <asp:scriptmanager ID="Scriptmanager1" runat="server"></asp:scriptmanager>
+    <div class="page">
+        <div class="header">
+            <div class="title">
+                    <asp:Label ID="lblTitle" style="font-size:large; font-weight:bold; color:White;" runat="server" Text=""></asp:Label>
+            </div>
+            <div class="loginDisplay">
+                <a onclick="javascript:return LoginRedirect();" onmouseout="document.body.style.cursor='default'"  onmouseover="document.body.style.cursor='pointer'" ID="HeadLoginStatus" runat="server">Log Out</a>
+            </div>
+            <div class="clear hideSkiplink">
+                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
+                    <Items>
+                        <asp:MenuItem NavigateUrl="~/Pages/About.aspx" Text="About"/>
+                    </Items>
+                </asp:Menu>
+            </div>
+        </div>
+        <div class="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="footer">
+        
+    </div>
+    </form>
+</body>
+</html>

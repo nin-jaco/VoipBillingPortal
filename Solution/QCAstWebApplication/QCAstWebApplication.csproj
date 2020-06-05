@@ -1,0 +1,419 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AA9D1681-8F25-4EBD-B8D4-A0AC61C7DF65}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>QCAstWebApplication</RootNamespace>
+    <AssemblyName>QCAstWebApplication</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit">
+      <HintPath>..\..\..\..\Visual Studio 2010\Projects\QCAstSolution\packages\AjaxControlToolkit.4.1.60919\lib\40\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNet.Highcharts, Version=1.1.0.0, Culture=neutral, PublicKeyToken=88854f873df851bf, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\DotNet.Highcharts.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\..\..\..\Visual Studio 2010\Projects\QCAstSolution\packages\AjaxControlToolkit.4.1.60919\lib\40\SanitizerProviders\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Web.UI.WebControls">
+      <HintPath>..\QCASTBilling_Web\Bin\Microsoft.Web.UI.WebControls.dll</HintPath>
+    </Reference>
+    <Reference Include="SanitizerProviders">
+      <HintPath>..\..\..\..\Visual Studio 2010\Projects\QCAstSolution\packages\AjaxControlToolkit.4.1.60919\lib\40\SanitizerProviders\SanitizerProviders.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AboutUs.aspx" />
+    <Content Include="AdminBilling.aspx" />
+    <Content Include="ClientBilling.aspx" />
+    <Content Include="ClientManagement.aspx" />
+    <Content Include="ClientProfile.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="ErrorPage.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\alternateMenuRight.jpg" />
+    <Content Include="Images\billingPageDivision_r1_c1.png" />
+    <Content Include="Images\bodyBack.jpg" />
+    <Content Include="Images\bottomShadow.png" />
+    <Content Include="Images\btnCancel.png" />
+    <Content Include="Images\btnCreateInvoice.png" />
+    <Content Include="Images\btnFirst.png" />
+    <Content Include="Images\btnGo.png" />
+    <Content Include="Images\btnGoWhite.png" />
+    <Content Include="Images\btnLast.png" />
+    <Content Include="Images\btnLogin.png" />
+    <Content Include="Images\btnNext.png" />
+    <Content Include="Images\btnPrevious.png" />
+    <Content Include="Images\btnReadMore.png" />
+    <Content Include="Images\btnSubmit.png" />
+    <Content Include="Images\calendar.gif" />
+    <Content Include="Images\clientPagedivision_r1_c1_s1.png" />
+    <Content Include="Images\clientPagedivision_r1_c2_s1.png" />
+    <Content Include="Images\clientPagedivision_r2_c1_s1.png" />
+    <Content Include="Images\dateTextboxBack.png" />
+    <Content Include="Images\final2_r1_c1_s1.jpg" />
+    <Content Include="Images\final2_r2_c10_s1.jpg" />
+    <Content Include="Images\final2_r2_c1_s1.jpg" />
+    <Content Include="Images\final2_r2_c3_s1.jpg" />
+    <Content Include="Images\final2_r2_c3_s2.jpg" />
+    <Content Include="Images\final2_r2_c4_s1.jpg" />
+    <Content Include="Images\final2_r2_c4_s2.jpg" />
+    <Content Include="Images\final2_r2_c5_s1.jpg" />
+    <Content Include="Images\final2_r2_c5_s2.jpg" />
+    <Content Include="Images\final2_r2_c6_s1.jpg" />
+    <Content Include="Images\final2_r2_c6_s2.jpg" />
+    <Content Include="Images\final2_r2_c7_s1.jpg" />
+    <Content Include="Images\final2_r2_c7_s2.jpg" />
+    <Content Include="Images\final2_r2_c8_s1.jpg" />
+    <Content Include="Images\final2_r2_c8_s2.jpg" />
+    <Content Include="Images\final2_r2_c9_s1.jpg" />
+    <Content Include="Images\final2_r2_c9_s2.jpg" />
+    <Content Include="Images\final2_r3_c1_s1.jpg" />
+    <Content Include="Images\footer.jpg" />
+    <Content Include="Images\homeSections.png" />
+    <Content Include="Images\iconAddClient.png" />
+    <Content Include="Images\iconAddUser.png" />
+    <Content Include="Images\iconDeleteClient.png" />
+    <Content Include="Images\iconDeleteUser.png" />
+    <Content Include="Images\iconEditClient.png" />
+    <Content Include="Images\iconSaveUser.png" />
+    <Content Include="Images\iVolve.jpg" />
+    <Content Include="Images\LaserNet.jpg" />
+    <Content Include="Images\LaserNetLogoReport.png" />
+    <Content Include="Images\left.png" />
+    <Content Include="Images\loginLogos.jpg" />
+    <Content Include="Images\login_bottom.jpg" />
+    <Content Include="Images\login_top.png" />
+    <Content Include="Images\managementSection1.png" />
+    <Content Include="Images\menuRight_r1_c1_s1.jpg" />
+    <Content Include="Images\menuRight_r1_c2_s1.jpg" />
+    <Content Include="Images\menuRight_s1.jpg" />
+    <Content Include="Images\next.png" />
+    <Content Include="Images\pagedivision_r1_c1.png" />
+    <Content Include="Images\pagedivision_r1_c2.png" />
+    <Content Include="Images\pagedivision_r2_c1.png" />
+    <Content Include="Images\partnerLogos.png" />
+    <Content Include="Images\prev.png" />
+    <Content Include="Images\QCAstLogo.png" />
+    <Content Include="Images\QCSolutions.jpg" />
+    <Content Include="Images\radialShadow.png" />
+    <Content Include="Images\reportPageDivision_r1_c1.png" />
+    <Content Include="Images\right.png" />
+    <Content Include="Images\scrollerPlaceHolder.jpg" />
+    <Content Include="Images\search_r1_c1_s1.png" />
+    <Content Include="Images\search_r1_c2_s1.png" />
+    <Content Include="Images\slide-image.png" />
+    <Content Include="Images\slide-image2.png" />
+    <Content Include="Images\slide-image3.png" />
+    <Content Include="Images\textboxBack.png" />
+    <Content Include="Images\textboxBackSmall.png" />
+    <Content Include="Login.aspx" />
+    <Content Include="LogOff.aspx" />
+    <Content Include="Reports.aspx" />
+    <Content Include="Scripts\highcharts.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Scripts\jquery-func.js" />
+    <Content Include="Scripts\jquery.jcarousel.pack.js" />
+    <Content Include="packages.config" />
+    <None Include="Properties\DataSources\QCAstSolution.Classes.Billing.datasource" />
+    <None Include="Properties\DataSources\QCAstSolution.Classes.Client.datasource" />
+    <None Include="Properties\DataSources\QCAstSolution.Classes.ClientProfile.datasource" />
+    <None Include="Properties\DataSources\QCAstSolution.Classes.Invoice.datasource" />
+    <None Include="Properties\DataSources\QCAstSolution.Classes.InvoiceDetail.datasource" />
+    <None Include="Properties\DataSources\QCAstSolution.Classes.InvoiceSummary.datasource" />
+    <None Include="Properties\DataSources\QCAstSolution.Classes.PreferredContactMethod.datasource" />
+    <None Include="Properties\DataSources\QCAstSolution.Classes.Profile.datasource" />
+    <None Include="Properties\DataSources\QCAstSolution.Classes.Report.datasource" />
+    <None Include="Properties\DataSources\QCAstSolution.Classes.SummaryByOrigin.datasource" />
+    <None Include="Properties\DataSources\QCAstSolution.Classes.TopTwenty.datasource" />
+    <None Include="Properties\DataSources\QCAstSolution.Classes.TopTwentyByDuration.datasource" />
+    <None Include="Properties\DataSources\QCAstSolution.Classes.User.datasource" />
+    <None Include="Service References\QCAstServiceReference\Arrays.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\QCAstServiceReference\configuration91.svcinfo" />
+    <None Include="Service References\QCAstServiceReference\configuration.svcinfo" />
+    <None Include="Service References\QCAstServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Styles\StyleSheet.css" />
+    <Content Include="UserManagement.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <None Include="Service References\QCAstServiceReference\QCAstSolution.Classes.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\QCAstServiceReference\service.wsdl" />
+    <None Include="Service References\QCAstServiceReference\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\QCAstServiceReference\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\QCAstServiceReference\System.Collections.Generic.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutUs.aspx.cs">
+      <DependentUpon>AboutUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AboutUs.aspx.designer.cs">
+      <DependentUpon>AboutUs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminBilling.aspx.cs">
+      <DependentUpon>AdminBilling.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminBilling.aspx.designer.cs">
+      <DependentUpon>AdminBilling.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientBilling.aspx.cs">
+      <DependentUpon>ClientBilling.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientBilling.aspx.designer.cs">
+      <DependentUpon>ClientBilling.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientManagement.aspx.cs">
+      <DependentUpon>ClientManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientManagement.aspx.designer.cs">
+      <DependentUpon>ClientManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientProfile.aspx.cs">
+      <DependentUpon>ClientProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientProfile.aspx.designer.cs">
+      <DependentUpon>ClientProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Datasets\dsInvoiceDetail.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsInvoiceDetail.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Datasets\dsInvoiceSummary.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsInvoiceSummary.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Datasets\dsUndefinedDest.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsUndefinedDest.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorPage.aspx.cs">
+      <DependentUpon>ErrorPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ErrorPage.aspx.designer.cs">
+      <DependentUpon>ErrorPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LogOff.aspx.cs">
+      <DependentUpon>LogOff.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LogOff.aspx.designer.cs">
+      <DependentUpon>LogOff.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports.aspx.cs">
+      <DependentUpon>Reports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports.aspx.designer.cs">
+      <DependentUpon>Reports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\QCAstServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UserManagement.aspx.cs">
+      <DependentUpon>UserManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserManagement.aspx.designer.cs">
+      <DependentUpon>UserManagement.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Datasets\dsInvoiceDetail.xsc">
+      <DependentUpon>dsInvoiceDetail.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\dsInvoiceDetail.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsInvoiceDetail.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Datasets\dsInvoiceDetail.xss">
+      <DependentUpon>dsInvoiceDetail.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\dsInvoiceSummary.xsc">
+      <DependentUpon>dsInvoiceSummary.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\dsInvoiceSummary.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsInvoiceSummary.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Datasets\dsInvoiceSummary.xss">
+      <DependentUpon>dsInvoiceSummary.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\dsUndefinedDest.xsc">
+      <DependentUpon>dsUndefinedDest.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\dsUndefinedDest.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsUndefinedDest.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Datasets\dsUndefinedDest.xss">
+      <DependentUpon>dsUndefinedDest.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Visual Studio 2010\Projects\QCAstSolution\QCAstSolution.Classes\QCAstSolution.Classes.csproj">
+      <Project>{331259BE-7011-450C-80F5-1CD29CD0ED0A}</Project>
+      <Name>QCAstSolution.Classes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\visual studio 2010\Projects\QCAstSolution\QCAstSolution.Data\QCAstSolution.Data.csproj">
+      <Project>{015DA59B-AA19-4328-98AB-14FB2A69D33F}</Project>
+      <Name>QCAstSolution.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BLL\BLL\BLL.csproj">
+      <Project>{16510833-0265-48F4-933A-AED2C83126DA}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Reports\AccountTotal.rdlc" />
+    <EmbeddedResource Include="Reports\International.rdlc" />
+    <EmbeddedResource Include="Reports\InvoiceDetail.rdlc" />
+    <EmbeddedResource Include="Reports\StatementDetailBySrc.rdlc" />
+    <EmbeddedResource Include="Reports\StatementSummaryBySrc.rdlc" />
+    <EmbeddedResource Include="Reports\Top20ByCost.rdlc" />
+    <EmbeddedResource Include="Reports\Top20ByDuration.rdlc" />
+    <EmbeddedResource Include="Reports\UndefinedDestinations.rdlc" />
+    <EmbeddedResource Include="Reports\UndefinedDestinations2.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\QCAstServiceReference\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>6984</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/QCAstWebApplication</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
